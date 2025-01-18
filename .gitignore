@@ -1,0 +1,30 @@
+# ビルド出力
+dist/
+
+# 依存関係
+node_modules/
+.npm
+.yarn
+.pnp.*
+
+# エディタ設定
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# デバッグログ
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 環境変数
+.env
+.env.local
+.env.*.local
+
+# キャッシュ
+.cache/
+.deno/
+*.log 

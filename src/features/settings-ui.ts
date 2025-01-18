@@ -22,7 +22,7 @@ export class SettingsUI {
   private createSenSettingsContent(): HTMLDivElement {
     const content = document.createElement('div');
     const settings = this.settingsManager.getSettings();
-    
+
     content.innerHTML = `
       <div class="settingGroup-module__setting_group__zDeQH">
         <div class="settingGroup-module__title_box__fyl29">
@@ -64,10 +64,10 @@ export class SettingsUI {
   private setupTabSwitching(menuItem: HTMLLIElement, content: HTMLDivElement): void {
     const allMenuButtons = document.querySelectorAll('.settingPopup-module__button_menu__8XxD0');
     const contentsArea = document.querySelector('.settingPopup-module__contents__rgdP5');
-    
+
     menuItem.querySelector('button')?.addEventListener('click', () => {
       // 他のタブのaria-currentをfalseに
-      allMenuButtons.forEach(button => button.setAttribute('aria-current', 'false'));
+      allMenuButtons.forEach((button) => button.setAttribute('aria-current', 'false'));
       menuItem.querySelector('button')?.setAttribute('aria-current', 'true');
 
       // コンテンツを切り替え
@@ -84,7 +84,7 @@ export class SettingsUI {
 
     const menuItem = this.createSenMenuItem();
     const content = this.createSenSettingsContent();
-    
+
     menuList.appendChild(menuItem);
     this.setupTabSwitching(menuItem, content);
   }

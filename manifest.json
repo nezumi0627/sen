@@ -1,32 +1,19 @@
 {
   "manifest_version": 3,
-  "name": "Sen - LINE拡張機能",
-  "version": "0.1.0",
-  "version_name": "pre-Alpha 0.1.0",
-  "description": "Enhance Your LINE Experience",
+  "name": "Sen",
+  "version": "1.0.0",
+  "description": "Enhance LINE Web with custom features",
   "icons": {
-    "16": "icons/icon.svg",
-    "32": "icons/icon.svg",
-    "48": "icons/icon.svg",
     "128": "icons/icon.svg"
   },
   "action": {
-    "default_popup": "popup/index.html",
-    "default_icon": {
-      "16": "icons/icon.svg",
-      "32": "icons/icon.svg",
-      "48": "icons/icon.svg",
-      "128": "icons/icon.svg"
-    }
+    "default_icon": "icons/icon.svg"
   },
   "content_scripts": [
     {
       "matches": ["https://line-web.ame-x.net/*"],
-      "js": ["content/main.js"],
-      "css": [
-        "styles/main.css",
-        "styles/components/settings.css"
-      ]
+      "css": ["styles/content.css"],
+      "js": ["content/main.js"]
     }
   ],
   "background": {
@@ -34,18 +21,13 @@
     "type": "module"
   },
   "permissions": [
-    "storage",
-    "tabs"
+    "storage"
   ],
   "host_permissions": [
     "https://line-web.ame-x.net/*"
   ],
   "web_accessible_resources": [{
-    "resources": [
-      "icons/*",
-      "icons/icon.svg",
-      "icons/logo.svg"
-    ],
+    "resources": ["icons/*"],
     "matches": ["https://line-web.ame-x.net/*"]
   }]
 }

@@ -1,3 +1,51 @@
+@import './components/toggle.css';
+
+/* トグルスイッチのスタイル */
+.sen-toggle {
+  position: relative;
+  display: inline-block;
+  width: 52px;
+  height: 28px;
+}
+
+.sen-toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.sen-toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.sen-toggle-slider:before {
+  position: absolute;
+  content: '';
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+.sen-toggle input:checked + .sen-toggle-slider {
+  background-color: #00b900;
+}
+
+.sen-toggle input:checked + .sen-toggle-slider:before {
+  transform: translateX(24px);
+}
+
 /* LINEのUIを拡張するスタイル */
 .sen-enhanced {
   /* カスタムスタイルをここに追加 */
@@ -28,4 +76,92 @@
 
 .sen-button:hover {
   background: #009900;
+}
+
+.sen-icon-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.sen-icon-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 180px;
+  width: 180px;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.sen-icon-container.show {
+  display: inline-flex !important;
+}
+
+.sen-icon {
+  width: 180px;
+  height: 180px;
+  display: block;
+}
+
+.sen-settings {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: none;
+}
+
+.sen-settings.show {
+  display: block;
+}
+
+.sen-settings-item {
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+}
+
+.sen-settings-item label {
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+.pinCodeModal-module__pincode__bFKMn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sen-copy-button {
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  color: #00b900;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.sen-copy-button:hover {
+  background: rgba(0, 185, 0, 0.1);
+}
+
+.sen-copy-button.copied {
+  background: #00b900;
+  color: white;
+}
+
+.sen-copy-button svg {
+  width: 16px;
+  height: 16px;
 }

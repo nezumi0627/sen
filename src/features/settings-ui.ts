@@ -45,6 +45,20 @@ export class SettingsUI {
           </div>
         </div>
       </div>
+      <div class="settingGroup-module__setting_group__zDeQH">
+        <div class="settingGroup-module__title_box__fyl29">
+          <strong class="settingGroup-module__title__Zf02i">テーマ設定</strong>
+        </div>
+        <div class="settingGroup-module__contents__DreL9">
+          <div class="settingItem-module__setting_item__1-HtF" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0;">
+            <span class="settingItem-module__text__2t_GI">ダークモード</span>
+            <label class="sen-toggle">
+              <input type="checkbox" id="darkMode" ${settings.darkMode ? 'checked' : ''}>
+              <span class="sen-toggle-slider"></span>
+            </label>
+          </div>
+        </div>
+      </div>
     `;
 
     // イベントリスナーの設定
@@ -56,6 +70,11 @@ export class SettingsUI {
     content.querySelector('#showSenIcon')?.addEventListener('change', async (e) => {
       const target = e.target as HTMLInputElement;
       await this.settingsManager.updateSetting('showSenIcon', target.checked);
+    });
+
+    content.querySelector('#darkMode')?.addEventListener('change', async (e) => {
+      const target = e.target as HTMLInputElement;
+      await this.settingsManager.updateSetting('darkMode', target.checked);
     });
 
     return content;

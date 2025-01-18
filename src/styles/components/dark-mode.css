@@ -1,0 +1,66 @@
+/* ダークモードのスタイル */
+:root[data-theme='dark'] {
+  /* 背景色 */
+  --sen-bg-primary: #1a1a1a;
+  --sen-bg-secondary: #2d2d2d;
+  --sen-bg-tertiary: #404040;
+
+  /* テキスト色 */
+  --sen-text-primary: #ffffff;
+  --sen-text-secondary: #cccccc;
+  --sen-text-tertiary: #999999;
+
+  /* アクセント色 */
+  --sen-accent-primary: #00b900;
+  --sen-accent-secondary: #009900;
+
+  /* ボーダー色 */
+  --sen-border-color: #404040;
+}
+
+/* ダークモード時のLINEの要素のスタイル */
+:root[data-theme='dark'] {
+  /* 背景色の適用 */
+  .loginPage-module__page__3YrX4,
+  .settingPopup-module__popup__2RZkQ {
+    background-color: var(--sen-bg-primary);
+  }
+
+  /* テキスト色の適用 */
+  .loginPage-module__title__zFCNd,
+  .settingPopup-module__title__1E-q5,
+  .settingGroup-module__title__Zf02i {
+    color: var(--sen-text-primary);
+  }
+
+  /* セカンダリテキストの適用 */
+  .loginPage-module__description__2Bohe,
+  .settingItem-module__text__2t_GI {
+    color: var(--sen-text-secondary);
+  }
+
+  /* ボーダーの適用 */
+  .settingPopup-module__popup__2RZkQ,
+  .settingGroup-module__setting_group__zDeQH {
+    border-color: var(--sen-border-color);
+  }
+
+  /* ボタンのスタイル */
+  .sen-button {
+    background-color: var(--sen-accent-primary);
+    color: var(--sen-text-primary);
+  }
+
+  .sen-button:hover {
+    background-color: var(--sen-accent-secondary);
+  }
+
+  /* トグルスイッチのスタイル */
+  .sen-toggle-slider {
+    background-color: var(--sen-bg-tertiary);
+  }
+
+  .sen-toggle input:checked + .sen-toggle-slider {
+    background-color: var(--sen-accent-primary);
+  }
+}

@@ -1,46 +1,46 @@
 import '../types/chrome';
 
-// 拡張機能のバックグラウンドスクリプト
+class BackgroundScript {
+  private settings = {
+    showLoginIcon: true,
+    showSenIcon: true,
+  };
 
-class SenBackgroundScript {
   constructor() {
     this.initialize();
   }
 
-  private initialize(): void {
-    console.log('Sen background script initialized');
-    this.setupMessageListeners();
+  private async initialize(): Promise<void> {
+    await this.loadSettings();
+    this.setupMessageListener();
   }
 
-  private setupMessageListeners(): void {
-    // コンテンツスクリプトからのメッセージを処理
-    // @ts-ignore
-    chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-      console.log('Received message:', message);
+  private async loadSettings(): Promise<void> {
+    // @ts-ignore: chrome.storage.sync.getの型定義が不完全なため
+    const result = await chrome.storage.sync.get(['showLoginIcon', 'showSenIcon']);
+    this.settings = {
+      showLoginIcon: result.showLoginIcon ?? true,
+      showSenIcon: result.showSenIcon ?? true,
+    };
+  }
 
-      // メッセージの種類に応じて処理を実行
-      switch (message.type) {
-        case 'SAVE_SETTINGS':
-          this.saveSettings(message.data);
-          break;
-        case 'GET_SETTINGS':
-          this.getSettings().then(sendResponse);
-          return true; // 非同期レスポンスのために必要
-      }
+  private setupMessageListener(): void {
+    chrome.runtime.onMessage.addListener((_message, _sender, sendResponse) => {
+      sendResponse(this.settings);
+      return true;
     });
   }
 
-  private async saveSettings(settings: any): Promise<void> {
-    // @ts-ignore
-    await chrome.storage.sync.set({ settings });
+  private async updateSettings(settings: { [key: string]: boolean }): Promise<void> {
+    // @ts-ignore: chrome.storage.sync.setの型定義が不完全なため
+    await chrome.storage.sync.set(settings);
+    this.settings = { ...this.settings, ...settings };
   }
 
-  private async getSettings(): Promise<any> {
-    // @ts-ignore
-    const data = await chrome.storage.sync.get('settings');
-    return data.settings;
+  private async handleSettingsUpdate(key: string, value: boolean): Promise<void> {
+    // @ts-ignore: chrome.storage.sync.setの型定義が不完全なため
+    await this.updateSettings({ [key]: value });
   }
 }
 
-// バックグラウンドスクリプトの初期化
-new SenBackgroundScript();
+new BackgroundScript();

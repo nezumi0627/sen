@@ -99,8 +99,10 @@ export class IconManager {
       const titleElement = document.querySelector(IconManager.TITLE_SELECTOR);
       const logoElement = document.querySelector(IconManager.LOGO_SELECTOR);
 
-      if ((titleElement && !titleElement.querySelector('.sen-icon-container')) ||
-          (logoElement && !logoElement.querySelector('.sen-icon-container'))) {
+      if (
+        (titleElement && !titleElement.querySelector('.sen-icon-container')) ||
+        (logoElement && !logoElement.querySelector('.sen-icon-container'))
+      ) {
         this.injectIcons();
         this.updateIconVisibility();
       }

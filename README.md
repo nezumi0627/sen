@@ -1,4 +1,4 @@
-# Sen - LINE Web拡張機能
+# Sen - LINE Unofficial Extension
 
 LINEのウェブバージョンにカスタムアイコンと機能を追加するChrome拡張機能です。
 

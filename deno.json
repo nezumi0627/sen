@@ -29,17 +29,15 @@
   },
   "tasks": {
     "clean": "rm -rf dist",
-    "make-dirs": "mkdir dist && cd dist && mkdir content background popup icons styles && cd styles && mkdir components",
+    "make-dirs": "mkdir dist && cd dist && mkdir content background popup icons styles",
     "build:content": "deno run --allow-read --allow-write --allow-env --allow-net --allow-run npm:esbuild src/content/main.ts --bundle --format=esm --outfile=dist/content/main.js --platform=browser --target=chrome58 --sourcemap",
     "build:background": "deno run --allow-read --allow-write --allow-env --allow-net --allow-run npm:esbuild src/background/main.ts --bundle --format=esm --outfile=dist/background/main.js --platform=browser --target=chrome58 --sourcemap",
     "build:popup": "deno run --allow-read --allow-write --allow-env --allow-net --allow-run npm:esbuild src/popup/main.ts --bundle --format=esm --outfile=dist/popup/main.js --platform=browser --target=chrome58 --sourcemap",
     "copy:manifest": "powershell Copy-Item -Path manifest.json -Destination dist -Force",
     "copy:icon": "powershell Copy-Item -Path icons\\icon.svg -Destination dist\\icons -Force",
     "copy:logo": "powershell Copy-Item -Path icons\\logo.svg -Destination dist\\icons -Force",
-    "copy:styles-main": "powershell Copy-Item -Path src\\styles\\main.css -Destination dist\\styles -Force",
-    "copy:styles-components": "powershell Copy-Item -Path src\\styles\\components\\settings.css -Destination dist\\styles\\components -Force",
-    "copy:popup": "powershell Copy-Item -Path src\\popup\\index.html -Destination dist\\popup -Force",
-    "copy:static": "deno task copy:manifest && deno task copy:icon && deno task copy:logo && deno task copy:styles-main && deno task copy:styles-components && deno task copy:popup",
+    "copy:styles": "powershell Copy-Item -Path src\\styles\\content.css -Destination dist\\styles -Force",
+    "copy:static": "deno task copy:manifest && deno task copy:icon && deno task copy:logo && deno task copy:styles",
     "build": "deno task clean && deno task make-dirs && deno task build:content && deno task build:background && deno task build:popup && deno task copy:static"
   }
 }

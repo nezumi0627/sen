@@ -14,6 +14,13 @@ echo "✅ @pre-push tag check passed"
 # Lintチェック
 echo "🧹 Running linter checks..."
 
+# 自動フォーマット
+echo "📝 Running automatic formatting..."
+deno fmt
+git add .
+git commit --amend --no-edit
+echo "✅ Formatting completed"
+
 # フォーマットチェック
 echo "📝 Verifying formatting..."
 if ! deno fmt --check; then

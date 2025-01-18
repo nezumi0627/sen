@@ -36,4 +36,4 @@ LINEのweb版をより使いやすくするための拡張機能です。
 
 ## ライセンス
 
-MIT License
+このプロジェクトは[MIT License](LICENSE)の下で公開されています。

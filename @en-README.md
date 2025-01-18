@@ -36,4 +36,4 @@ This is an **unofficial** extension and has no affiliation with LINE Yahoo Corpo
 
 ## License
 
-MIT License
+This project is licensed under the [MIT License](LICENSE).

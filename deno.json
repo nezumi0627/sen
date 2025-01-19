@@ -8,23 +8,17 @@
   },
   "vendor": true,
   "fmt": {
-    "files": {
-      "include": ["src/"],
-      "exclude": ["dist/"]
-    },
-    "options": {
-      "useTabs": false,
-      "lineWidth": 120,
-      "indentWidth": 2,
-      "singleQuote": true,
-      "proseWrap": "preserve"
-    }
+    "include": ["src/"],
+    "exclude": ["dist/"],
+    "useTabs": false,
+    "lineWidth": 120,
+    "indentWidth": 2,
+    "singleQuote": true,
+    "proseWrap": "preserve"
   },
   "lint": {
-    "files": {
-      "include": ["src/"],
-      "exclude": ["dist/"]
-    },
+    "include": ["src/"],
+    "exclude": ["dist/"],
     "rules": {
       "tags": ["recommended"],
       "include": ["ban-untagged-todo"],

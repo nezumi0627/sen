@@ -11,11 +11,11 @@ export class SettingsUI {
   private createSenMenuItem(): HTMLLIElement {
     const menuItem = document.createElement('li');
     menuItem.className = 'settingPopup-module__menu_list_item__i-60E';
-    menuItem.innerHTML = `
-      <button type="button" class="settingPopup-module__button_menu__8XxD0" data-key="sen" aria-current="false">
+    menuItem.innerHTML = (
+      <button type='button' class='settingPopup-module__button_menu__8XxD0' data-key='sen' aria-current='false'>
         Sen設定
       </button>
-    `;
+    );
     return menuItem;
   }
 
@@ -23,29 +23,35 @@ export class SettingsUI {
     const content = document.createElement('div');
     const settings = this.settingsManager.getSettings();
 
-    content.innerHTML = `
-      <div class="settingGroup-module__setting_group__zDeQH">
-        <div class="settingGroup-module__title_box__fyl29">
-          <strong class="settingGroup-module__title__Zf02i">アイコン設定</strong>
+    content.innerHTML = (
+      <div class='settingGroup-module__setting_group__zDeQH'>
+        <div class='settingGroup-module__title_box__fyl29'>
+          <strong class='settingGroup-module__title__Zf02i'>アイコン設定</strong>
         </div>
-        <div class="settingGroup-module__contents__DreL9">
-          <div class="settingItem-module__setting_item__1-HtF" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0;">
-            <span class="settingItem-module__text__2t_GI">ログインアイコンを表示</span>
-            <label class="sen-toggle">
-              <input type="checkbox" id="showLoginIcon" ${settings.showLoginIcon ? 'checked' : ''}>
-              <span class="sen-toggle-slider"></span>
+        <div class='settingGroup-module__contents__DreL9'>
+          <div
+            class='settingItem-module__setting_item__1-HtF'
+            style='display: flex; justify-content: space-between; align-items: center; padding: 12px 0;'
+          >
+            <span class='settingItem-module__text__2t_GI'>ログインアイコンを表示</span>
+            <label class='sen-toggle'>
+              <input type='checkbox' id='showLoginIcon' {...settings.showLoginIcon ? 'checked' : ''} />
+              <span class='sen-toggle-slider'></span>
             </label>
           </div>
-          <div class="settingItem-module__setting_item__1-HtF" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0;">
-            <span class="settingItem-module__text__2t_GI">Senアイコンを表示</span>
-            <label class="sen-toggle">
-              <input type="checkbox" id="showSenIcon" ${settings.showSenIcon ? 'checked' : ''}>
-              <span class="sen-toggle-slider"></span>
+          <div
+            class='settingItem-module__setting_item__1-HtF'
+            style='display: flex; justify-content: space-between; align-items: center; padding: 12px 0;'
+          >
+            <span class='settingItem-module__text__2t_GI'>Senアイコンを表示</span>
+            <label class='sen-toggle'>
+              <input type='checkbox' id='showSenIcon' {...settings.showSenIcon ? 'checked' : ''} />
+              <span class='sen-toggle-slider'></span>
             </label>
           </div>
         </div>
       </div>
-    `;
+    );
 
     // イベントリスナーの設定
     content.querySelector('#showLoginIcon')?.addEventListener('change', async (e) => {

@@ -1,8 +1,12 @@
 {
+  "$schema": "https://deno.land/x/deno/cli/schemas/config-file.v1.json",
   "compilerOptions": {
     "lib": ["dom", "dom.iterable", "dom.asynciterable", "deno.ns"],
-    "types": ["chrome"]
+    "types": ["chrome"],
+    "jsx": "react-jsx",
+    "jsxImportSource": "hono/jsx"
   },
+  "vendor": true,
   "fmt": {
     "files": {
       "include": ["src/"],
@@ -30,7 +34,7 @@
   "tasks": {
     "clean": "rm -rf dist",
     "make-dirs": "mkdir dist && cd dist && mkdir content background popup icons styles",
-    "build:content": "deno run --allow-read --allow-write --allow-env --allow-net --allow-run npm:esbuild src/content/main.ts --bundle --format=esm --outfile=dist/content/main.js --platform=browser --target=chrome58 --sourcemap",
+    "build:content": "deno run --allow-read --allow-write --allow-env --allow-net --allow-run npm:esbuild src/content/main.ts --bundle --format=esm --outfile=dist/content/main.js --platform=browser --target=chrome58 --sourcemap --jsx=automatic --jsx-import-source=hono/jsx",
     "build:background": "deno run --allow-read --allow-write --allow-env --allow-net --allow-run npm:esbuild src/background/main.ts --bundle --format=esm --outfile=dist/background/main.js --platform=browser --target=chrome58 --sourcemap",
     "build:popup": "deno run --allow-read --allow-write --allow-env --allow-net --allow-run npm:esbuild src/popup/main.ts --bundle --format=esm --outfile=dist/popup/main.js --platform=browser --target=chrome58 --sourcemap",
     "copy:manifest": "cp manifest.json dist",
@@ -39,5 +43,8 @@
     "copy:styles": "cp src/styles/content.css dist/styles",
     "copy:static": "deno task copy:manifest && deno task copy:icon && deno task copy:logo && deno task copy:styles",
     "build": "deno task clean && deno task make-dirs && deno task build:content && deno task build:background && deno task build:popup && deno task copy:static"
+  },
+  "imports": {
+    "hono": "npm:hono@^4.6.17"
   }
 }

@@ -1,18 +1,18 @@
 {
-    "id": 3,
-    "name": "feature-protection",
-    "target": "branch",
-    "source_type": "Repository",
-    "source": "nezumi0627/sen",
-    "enforcement": "active",
-    "conditions": {
-      "ref_name": {
-        "exclude": [],
-        "include": [
-          "refs/heads/feature/*"
-        ]
-      }
-    },
-    "rules": [],
-    "bypass_actors": []
-  }
+  "id": 3,
+  "name": "feature-protection",
+  "target": "branch",
+  "source_type": "Repository",
+  "source": "nezumi0627/sen",
+  "enforcement": "active",
+  "conditions": {
+    "ref_name": {
+      "exclude": [],
+      "include": [
+        "refs/heads/feature/*"
+      ]
+    }
+  },
+  "rules": [],
+  "bypass_actors": []
+}

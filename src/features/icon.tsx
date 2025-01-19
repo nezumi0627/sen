@@ -12,7 +12,7 @@ export class IconManager {
   private createSettingsPanel(): HTMLDivElement {
     const panel = document.createElement('div');
     panel.className = 'sen-settings';
-    panel.innerHTML = `
+    panel.innerHTML = <>
       <div class="sen-settings-item">
         <input type="checkbox" id="showLoginIcon" checked>
         <label for="showLoginIcon">ログインアイコンを表示</label>
@@ -21,7 +21,7 @@ export class IconManager {
         <input type="checkbox" id="showSenIcon" checked>
         <label for="showSenIcon">Senアイコンを表示</label>
       </div>
-    `;
+    </>;
 
     // イベントリスナーの設定
     panel.querySelector('#showLoginIcon')?.addEventListener('change', async (e) => {
@@ -44,9 +44,7 @@ export class IconManager {
     if (titleElement && !titleElement.querySelector('.sen-icon-container')) {
       const iconContainer = document.createElement('div');
       iconContainer.className = 'sen-icon-container';
-      iconContainer.innerHTML = `
-        <img src="${chrome.runtime.getURL('icons/logo.svg')}" alt="Sen" class="sen-icon">
-      `;
+      iconContainer.innerHTML = <img src={chrome.runtime.getURL('icons/logo.svg')} alt="Sen" class="sen-icon" />;
 
       const wrapper = document.createElement('div');
       wrapper.className = 'sen-icon-wrapper';
@@ -67,9 +65,7 @@ export class IconManager {
     if (logoElement && !logoElement.querySelector('.sen-icon-container')) {
       const iconContainer = document.createElement('div');
       iconContainer.className = 'sen-icon-container';
-      iconContainer.innerHTML = `
-        <img src="${chrome.runtime.getURL('icons/logo.svg')}" alt="Sen" class="sen-icon">
-      `;
+      iconContainer.innerHTML = <img src={chrome.runtime.getURL('icons/logo.svg')} alt="Sen" class="sen-icon" />;
 
       const wrapper = document.createElement('div');
       wrapper.className = 'sen-icon-wrapper';

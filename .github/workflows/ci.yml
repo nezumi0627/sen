@@ -6,6 +6,13 @@ on:
   pull_request:
     branches: [main, develop]
 
+# 権限設定を追加
+permissions:
+  contents: read
+  security-events: write
+  actions: read
+  issues: write # GitHub Issuesへのアクセス権限を追加
+
 jobs:
   lint:
     runs-on: ubuntu-latest

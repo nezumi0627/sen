@@ -33,10 +33,10 @@
     "build:content": "deno run --allow-read --allow-write --allow-env --allow-net --allow-run npm:esbuild src/content/main.ts --bundle --format=esm --outfile=dist/content/main.js --platform=browser --target=chrome58 --sourcemap",
     "build:background": "deno run --allow-read --allow-write --allow-env --allow-net --allow-run npm:esbuild src/background/main.ts --bundle --format=esm --outfile=dist/background/main.js --platform=browser --target=chrome58 --sourcemap",
     "build:popup": "deno run --allow-read --allow-write --allow-env --allow-net --allow-run npm:esbuild src/popup/main.ts --bundle --format=esm --outfile=dist/popup/main.js --platform=browser --target=chrome58 --sourcemap",
-    "copy:manifest": "cp -f manifest.json dist",
-    "copy:icon": "cp -f icons/icon.svg dist/icons",
-    "copy:logo": "cp -f icons/logo.svg dist/icons",
-    "copy:styles": "cp -f src/styles/content.css dist/styles",
+    "copy:manifest": "cp manifest.json dist",
+    "copy:icon": "cp icons/icon.svg dist/icons",
+    "copy:logo": "cp icons/logo.svg dist/icons",
+    "copy:styles": "cp src/styles/content.css dist/styles",
     "copy:static": "deno task copy:manifest && deno task copy:icon && deno task copy:logo && deno task copy:styles",
     "build": "deno task clean && deno task make-dirs && deno task build:content && deno task build:background && deno task build:popup && deno task copy:static"
   }

@@ -1,0 +1,16 @@
+# デフォルトのオーナー
+* @nezumi0627
+
+# ソースコード
+/src/ @nezumi0627
+
+# 設定ファイル
+*.json @nezumi0627
+/manifest.json @nezumi0627
+
+# ドキュメント
+*.md @nezumi0627
+/docs/ @nezumi0627
+
+# GitHub関連
+/.github/ @nezumi0627

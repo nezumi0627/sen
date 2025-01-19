@@ -14,11 +14,11 @@ export class IconManager {
     panel.className = 'sen-settings';
     panel.innerHTML = <>
       <div class="sen-settings-item">
-        <input type="checkbox" id="showLoginIcon" checked>
+        <input type="checkbox" id="showLoginIcon" checked />
         <label for="showLoginIcon">ログインアイコンを表示</label>
       </div>
       <div class="sen-settings-item">
-        <input type="checkbox" id="showSenIcon" checked>
+        <input type="checkbox" id="showSenIcon" checked />
         <label for="showSenIcon">Senアイコンを表示</label>
       </div>
     </>;

@@ -1,0 +1,51 @@
+{
+    "id": 2,
+    "name": "develop-protection",
+    "target": "branch",
+    "source_type": "Repository",
+    "source": "nezumi0627/sen",
+    "enforcement": "active",
+    "conditions": {
+      "ref_name": {
+        "exclude": [],
+        "include": [
+          "refs/heads/develop"
+        ]
+      }
+    },
+    "rules": [
+      {
+        "type": "deletion",
+        "parameters": {}
+      },
+      {
+        "type": "required_linear_history",
+        "parameters": {}
+      },
+      {
+        "type": "pull_request",
+        "parameters": {
+          "required_approving_review_count": 1,
+          "dismiss_stale_reviews_on_push": true,
+          "required_review_thread_resolution": true,
+          "allowed_merge_methods": [
+            "merge",
+            "squash"
+          ]
+        }
+      },
+      {
+        "type": "required_status_checks",
+        "parameters": {
+          "strict_required_status_checks_policy": true,
+          "required_status_checks": [
+            {
+              "context": "lint",
+              "integration_id": null
+            }
+          ]
+        }
+      }
+    ],
+    "bypass_actors": []
+  }

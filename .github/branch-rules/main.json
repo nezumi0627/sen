@@ -1,0 +1,66 @@
+{
+    "id": 1,
+    "name": "main-protection",
+    "target": "branch",
+    "source_type": "Repository",
+    "source": "nezumi0627/sen",
+    "enforcement": "active",
+    "conditions": {
+      "ref_name": {
+        "exclude": [],
+        "include": [
+          "refs/heads/main"
+        ]
+      }
+    },
+    "rules": [
+      {
+        "type": "creation",
+        "parameters": {}
+      },
+      {
+        "type": "update",
+        "parameters": {}
+      },
+      {
+        "type": "deletion",
+        "parameters": {}
+      },
+      {
+        "type": "required_linear_history",
+        "parameters": {}
+      },
+      {
+        "type": "required_signatures",
+        "parameters": {}
+      },
+      {
+        "type": "pull_request",
+        "parameters": {
+          "dismiss_stale_reviews_on_push": true,
+          "require_code_owner_review": true,
+          "required_approving_review_count": 1,
+          "required_review_thread_resolution": true,
+          "require_last_push_approval": true,
+          "allowed_merge_methods": ["squash"]
+        }
+      },
+      {
+        "type": "required_status_checks",
+        "parameters": {
+          "strict_required_status_checks_policy": true,
+          "required_status_checks": [
+            {
+              "context": "lint",
+              "integration_id": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "non_fast_forward",
+        "parameters": {}
+      }
+    ],
+    "bypass_actors": []
+  }

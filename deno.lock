@@ -1,14 +1,9 @@
 {
   "version": "4",
   "specifiers": {
-    "jsr:@hono/hono@^4.6.17": "4.6.17",
     "npm:@types/chrome@*": "0.0.297",
-    "npm:esbuild@*": "0.24.2"
-  },
-  "jsr": {
-    "@hono/hono@4.6.17": {
-      "integrity": "932fcc61d043b14a8b2cb65242716eb32da44e91f2ee117fd7390508669fea31"
-    }
+    "npm:esbuild@*": "0.24.2",
+    "npm:hono@^4.6.17": "4.6.17"
   },
   "npm": {
     "@esbuild/aix-ppc64@0.24.2": {
@@ -134,6 +129,9 @@
         "@esbuild/win32-ia32",
         "@esbuild/win32-x64"
       ]
+    },
+    "hono@4.6.17": {
+      "integrity": "sha512-Kbh4M0so2RzLiIg6iP33DoTU68TdvP2O/kb1Hhhdwa37fazuf402ig8ZRfjkz2dqXwiWl2dAgh0f++TuKAdOtQ=="
     }
   },
   "redirects": {
@@ -240,7 +238,7 @@
   },
   "workspace": {
     "dependencies": [
-      "jsr:@hono/hono@^4.6.17"
+      "npm:hono@^4.6.17"
     ]
   }
 }

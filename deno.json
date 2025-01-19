@@ -2,7 +2,9 @@
   "$schema": "https://deno.land/x/deno/cli/schemas/config-file.v1.json",
   "compilerOptions": {
     "lib": ["dom", "dom.iterable", "dom.asynciterable", "deno.ns"],
-    "types": ["chrome"]
+    "types": ["chrome"],
+    "jsx": "react-jsx",
+    "jsxImportSource": "hono/jsx"
   },
   "fmt": {
     "files": {
@@ -40,5 +42,8 @@
     "copy:styles": "powershell Copy-Item -Path src\\styles\\content.css -Destination dist\\styles -Force",
     "copy:static": "deno task copy:manifest && deno task copy:icon && deno task copy:logo && deno task copy:styles",
     "build": "deno task clean && deno task make-dirs && deno task build:content && deno task build:background && deno task build:popup && deno task copy:static"
+  },
+  "imports": {
+    "@hono/hono": "jsr:@hono/hono@^4.6.17"
   }
 }

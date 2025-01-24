@@ -275,7 +275,7 @@ ${this.commands.map((cmd) => `${cmd.command} - ${cmd.description}`).join('\n')}
 
           // カーソルを末尾に移動
           const range = document.createRange();
-          const sel = window.getSelection();
+          const sel = globalThis.getSelection();
           range.selectNodeContents(input);
           range.collapse(false);
           sel?.removeAllRanges();
@@ -308,7 +308,7 @@ ${this.commands.map((cmd) => `${cmd.command} - ${cmd.description}`).join('\n')}
 
             // カーソルを末尾に移動
             const range = document.createRange();
-            const sel = window.getSelection();
+            const sel = globalThis.getSelection();
             range.selectNodeContents(input);
             range.collapse(false);
             sel?.removeAllRanges();
@@ -362,7 +362,7 @@ ${this.commands.map((cmd) => `${cmd.command} - ${cmd.description}`).join('\n')}
 
                   // カーソルを末尾に移動
                   const range = document.createRange();
-                  const sel = window.getSelection();
+                  const sel = globalThis.getSelection();
                   range.selectNodeContents(input);
                   range.collapse(false);
                   sel?.removeAllRanges();

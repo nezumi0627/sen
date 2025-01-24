@@ -21,7 +21,7 @@ assignees: nezumi0627
 - OS: <!-- 例: Windows 10, macOS 13.0 -->
 - ブラウザ: <!-- 例: Chrome 120.0.0, Firefox 121.0 -->
 - 拡張機能のバージョン: <!-- 例: v1.0.0 -->
-- 問題が起きているBranch: <!-- 例: develop -->
+- 問題が起きているブランチ: <!-- 例: develop -->
 
 ## 🤔 期待される動作
 

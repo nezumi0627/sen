@@ -1,5 +1,6 @@
 @import './components/toggle.css';
 @import './components/dark-mode.css';
+@import './components/chat-commands.css';
 
 /* トグルスイッチのスタイル */
 .sen-toggle {

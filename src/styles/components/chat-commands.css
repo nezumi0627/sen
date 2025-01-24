@@ -1,0 +1,74 @@
+.sen-command-suggestions {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  width: 100%;
+  background: var(--sen-background, white);
+  border: 1px solid var(--sen-border, #e6e6e6);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 8px;
+  margin-bottom: 8px;
+  z-index: 1000;
+  max-height: 200px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--sen-primary, #00b900) transparent;
+}
+
+.sen-command-suggestions::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sen-command-suggestions::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sen-command-suggestions::-webkit-scrollbar-thumb {
+  background-color: var(--sen-primary, #00b900);
+  border-radius: 3px;
+}
+
+.sen-command-item {
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s ease;
+  margin-bottom: 4px;
+}
+
+.sen-command-item:last-child {
+  margin-bottom: 0;
+}
+
+.sen-command-item:hover {
+  background-color: rgba(0, 185, 0, 0.1);
+  transform: translateX(4px);
+}
+
+.sen-command-item span:first-child {
+  font-weight: bold;
+  color: var(--sen-primary, #00b900);
+  font-family: 'Consolas', monospace;
+}
+
+.sen-command-item span:last-child {
+  color: var(--sen-text-secondary, #666);
+  font-size: 0.9em;
+}
+
+[data-theme='dark'] .sen-command-suggestions {
+  background: var(--sen-background-dark, #1a1a1a);
+  border-color: var(--sen-border-dark, #333);
+}
+
+[data-theme='dark'] .sen-command-item:hover {
+  background-color: rgba(0, 185, 0, 0.2);
+}
+
+[data-theme='dark'] .sen-command-item span:last-child {
+  color: var(--sen-text-secondary-dark, #999);
+}
